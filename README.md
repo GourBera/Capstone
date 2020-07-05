@@ -89,11 +89,6 @@ There could be many things one can understand by analyzing this dataset. Few ins
 >> - calendar_year
 >> - group_name
 >> - sub_group_name
->> - id_auto_theft
->> - id_complaints_against_policeid
->> - id_property_stolen_and_recovered
->> - id_serious_fraud
->> - id_victims_of_rape
 
 
 #### **Dimension Tables**
@@ -104,6 +99,9 @@ There could be many things one can understand by analyzing this dataset. Few ins
 >> - calendar_year
 >> - group_name
 >> - sub_group_name
+>> - auto_theft_coordinated_traced
+>> - auto_theft_recovered
+>> - auto_theft_stolen
 
 
 > **dim_complaints_against_police**
@@ -185,7 +183,7 @@ There could be many things one can understand by analyzing this dataset. Few ins
 
 >> **db_config.cfg** - All config related information about accessing AWS S3 and redshift
 
->> **s3_access.py** - Procedure assessing AWS S3
+>> **s3_access.py** - Procedure assessing AWS S3.
 
 >> **README.md** - Provides project description about processes and decisions for this ETL pipeline.
 
