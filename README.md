@@ -7,13 +7,13 @@ Setting up a Redshift data warehouse about 'Crime in India' on Amazon Cloud. In-
 
 There could be many things one can understand by analyzing this dataset. Few inspirations for you to start with.
 
-    >> Crime by place of occurrence.
+>> Crime by place of occurrence.
+   
+>> Anti-corruption cases vs arrests.
+   
+>> Which state is the safest for foreigners?
     
-    >> Anti-corruption cases vs arrests.
-    
-    >> Which state is the safest for foreigners?
-    
-    >> Juveniles family background, education and economic setup. etc.
+>> Juveniles family background, education and economic setup. etc.
     
 
 ### Project Description**
