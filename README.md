@@ -6,10 +6,15 @@
 Setting up a Redshift data warehouse about 'Crime in India' on Amazon Cloud. In-order to formulate various economical and financial decisions it is important to analyze socio-economic and crime-related information of a particular geographic location. Which provides a 360-degree overview of any particular area. The dataset contains complete information about various aspects of crimes that happened in India from 2001. Many factors can be analyzed from this dataset
 
 There could be many things one can understand by analyzing this dataset. Few inspirations for you to start with.
+
     >> Crime by place of occurrence.
+    
     >> Anti-corruption cases vs arrests.
+    
     >> Which state is the safest for foreigners?
+    
     >> Juveniles family background, education and economic setup. etc.
+    
 
 ### Project Description**
 
