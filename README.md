@@ -3,11 +3,11 @@
 
 ### **Project Summary**
 
-Setting up a Redshift data warehouse about 'Crime in India' on Amazon Cloud. In-order to formulate various economical and financial decision it is important to analyze socio economic and crime related information of particular geographic location. Which provide a 360 degree overview about any particular area. The dataset contains complete information about various aspects of crimes happened in India from 2001. There are many factors that can be analysed from this dataset
+Setting up a Redshift data warehouse about 'Crime in India' on Amazon Cloud. In-order to formulate various economical and financial decisions it is important to analyze socio-economic and crime-related information of a particular geographic location. Which provides a 360-degree overview of any particular area. The dataset contains complete information about various aspects of crimes that happened in India from 2001. Many factors can be analyzed from this dataset
 
 There could be many things one can understand by analyzing this dataset. Few inspirations for you to start with.
     >> Crime by place of occurrence.
-    >> Anti corruption cases vs arrests.
+    >> Anti-corruption cases vs arrests.
     >> Which state is the safest for foreigners?
     >> Juveniles family background, education and economic setup. etc.
 
@@ -22,7 +22,9 @@ There could be many things one can understand by analyzing this dataset. Few ins
 
 
 ### **Project Datasets**
-> Two datasets that reside in Directory Folder, consists of five different crime data set
+> Project datasets that reside in Directory Folder, consists of five different crime data set. The data set collected from Kaggle open data set. Below the link: 
+>> https://www.kaggle.com/rajanand/crime-in-india
+
 
 >> 1. Auto Theft (Stolen & Recovered)
 
@@ -176,15 +178,19 @@ There could be many things one can understand by analyzing this dataset. Few ins
 
 ### **Project Template**
 
-> Project workspace includes four files:
+> Project workspace includes six files:
 
 >> **create_tables.py** - Create fact and dimension tables for the star schema in Redshift.
 
->> **etl.py** - Load data from S3 into staging tables on Redshift and then process that data into analytics tables on Redshift.
+>> **etl_pipeline.py** - Gather data from Directory, load them into s3 bucket, and from S3 into staging tables on Redshift and then process that data into analytics tables on Redshift.
 
 >> **sql_queries.py** - Define SQL statements, which will be imported into the two other files above.
 
->> **README.md** - provides project description about process and decisions for this ETL pipeline.
+>> **db_config.cfg** - All config related information about accessing AWS S3 and redshift
+
+>> **s3_access.py** - Procedure assessing AWS S3
+
+>> **README.md** - Provides project description about processes and decisions for this ETL pipeline.
 
 
 ### **Project Steps**
@@ -193,69 +199,17 @@ There could be many things one can understand by analyzing this dataset. Few ins
 >> 1. Design schemas for fact and dimension tables
 >> 2. Write SQL statement for each of these tables in sql_queries.py
 >> 3. Complete the logic in create_tables.py to connect to the database and create these tables
->> 4. Write SQL statements to drop tables in the beginning of create_tables.py if the tables already exist. 
+>> 4. Write SQL statements to drop tables at the beginning of create_tables.py if the tables already exist. 
 >> 5. Launch a redshift cluster and create an IAM role that has read access to S3.
->> 6. Add redshift database and IAM role info to dwh.cfg.
+>> 6. Add redshift database and IAM role info to db_config.cfg.
 >> 7. Test by running create_tables.py and verifying the table schemas in redshift database using query Editor in the AWS Redshift console.
+>> 8. Run etl_pipeline.py and verify data has been loaded into the database
 
 > **Build ETL Pipeline**
->> 1. Implement the logic in etl.py to load data from S3 to staging tables on Redshift.
->> 2. Implement the logic in etl.py to load data from staging tables to analytics tables on Redshift.
->> 3. Test by running etl.py after running create_tables.py and running the analytic queries on Redshift database to compare the results with the expected results.
->> 4. Delete redshift cluster when Completed.
-
-
-The project follows the follow steps:
-
-    Step 1: Scope the Project and Gather Data
-    Step 2: Explore and Assess the Data
-    Step 3: Define the Data Model
-    Step 4: Run ETL to Model the Data
-    Step 5: Complete Project Write Up
-
-Step 2: Explore and Assess the Data
-Explore the Data
-
-Identify data quality issues, like missing values, duplicate data, etc.
-Cleaning Steps
-
-Document steps necessary to clean the data
-
-Step 3: Define the Data Model
-3.1 Conceptual Data Model
-
-Map out the conceptual data model and explain why you chose that model
-3.2 Mapping Out Data Pipelines
-
-List the steps necessary to pipeline the data into the chosen data model
-Step 4: Run Pipelines to Model the Data
-4.1 Create the data model
-
-Build the data pipelines to create the data model.
-
-# Write code here
-
-4.2 Data Quality Checks
-
-Explain the data quality checks you'll perform to ensure the pipeline ran as expected. These could include:
-
-    Integrity constraints on the relational database (e.g., unique key, data type, etc.)
-    Unit tests for the scripts to ensure they are doing the right thing
-    Source/Count checks to ensure completeness
-
-Run Quality Checks
-
-# Perform quality checks here
-
-4.3 Data dictionary
-
-Create a data dictionary for your data model. For each field, provide a brief description of what the data is and where it came from. You can include the data dictionary in the notebook or in a separate file.
-Step 5: Complete Project Write Up
-
-    Clearly state the rationale for the choice of tools and technologies for the project.
-    Propose how often the data should be updated and why.
-    Write a description of how you would approach the problem differently under the following scenarios:
-        The data was increased by 100x.
-        The data populates a dashboard that must be updated on a daily basis by 7am every day.
-        The database needed to be accessed by 100+ people.
+>> 1. Gather data from a directory and read them into pandas DataFrame
+>> 2. Process the data by exploring for various data issue and quality checks and finally load them into S3 bucket
+>> 1. Load data from S3 to staging tables on Redshift.
+>> 2. Load data from staging tables to analytics tables on Redshift.
+>> 3. Test by running etl.py after running create_tables.py and running the analytic queries on Redshift database and verify data has been loaded successfully
+>> 4. Delete the redshift cluster when Completed.
 
