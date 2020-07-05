@@ -26,57 +26,57 @@ There could be many things one can understand by analyzing this dataset. Few ins
 >> https://www.kaggle.com/rajanand/crime-in-india
 
 
->> 1. Auto Theft (Stolen & Recovered)
+> 1. Auto Theft (Stolen & Recovered)
 
-    >> Motor Cycles/ Scooters
+>> Motor Cycles/ Scooters
 
-    >> Motor Car/Taxi/Jeep
+>> Motor Car/Taxi/Jeep
 
-    >> Buses
+>> Buses
 
-    >> Goods carrying vehicles (Trucks/Tempo etc)
+>> Goods carrying vehicles (Trucks/Tempo etc)
 
-    >> Other Motor vehicles
+>> Other Motor vehicles
 
-    >> Total (Sum of 1-5 Above)
+>> Total (Sum of 1-5 Above)
 
->> 2. Complaints/Cases Against Police Personnel
+> 2. Complaints/Cases Against Police Personnel
 
-    >> Complaints Received/Cases Registered
+>> Complaints Received/Cases Registered
 
-    >> Police Personnel Involved/Action Taken
+>> Police Personnel Involved/Action Taken
 
-    >> Departmental Action/Punishments
-    
->> 3. Property Stolen & Recovered (Crime Head)
+>> Departmental Action/Punishments
 
-    >> Dacoity
+> 3. Property Stolen & Recovered (Crime Head)
 
-    >> Robbery
+>> Dacoity
 
-    >> Burglary
+>> Robbery
 
-    >> Theft
+>> Burglary
 
-    >> Criminal Breach of Trust
+>> Theft
 
-    >> Other Property
+>> Criminal Breach of Trust
 
-    >> Total Property Stolen & Recovered
-        
->> 4.  Serious Fraud
+>> Other Property
 
-    >> Criminal Breach of Trust
+>> Total Property Stolen & Recovered
 
-    >> Cheating
-    
->> 5. Victims of Rape(Age Group-wise)
+> 4.  Serious Fraud
 
-    >> Incest Rape Cases
+>> Criminal Breach of Trust
 
-    >> Other Rape Cases (Other than Incest)
+>> Cheating
 
-    >> Total Rape Cases
+> 5. Victims of Rape(Age Group-wise)
+
+>> Incest Rape Cases
+
+>> Other Rape Cases (Other than Incest)
+
+>> Total Rape Cases
     
     
 ### **Schema for Table design**
@@ -104,9 +104,6 @@ There could be many things one can understand by analyzing this dataset. Few ins
 >> - calendar_year
 >> - group_name
 >> - sub_group_name
->> - auto_theft_coordinated_traced
->> - auto_theft_recovered
->> - auto_theft_stolen
 
 
 > **dim_complaints_against_police**
@@ -212,4 +209,5 @@ There could be many things one can understand by analyzing this dataset. Few ins
 >> 2. Load data from staging tables to analytics tables on Redshift.
 >> 3. Test by running etl.py after running create_tables.py and running the analytic queries on Redshift database and verify data has been loaded successfully
 >> 4. Delete the redshift cluster when Completed.
+
 
